@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" >
+    <include resource="logback-defaults.xml"/>
+
+    <springProperty name="ROLLING_FILE_PATTERN" source="logging.rolling-file-pattern"/>
+    <springProperty name="LOG_LEVEL" source="custom.log.level"/>
+
+    <property name="ROOT_LOG_LEVEL" value="INFO"/>
+
+    <logger name="com.smilegate" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.cache" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.data" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.http" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.retry" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.transaction" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.web.filter" level="${LOG_LEVEL}"/>
+    <logger name="org.springframework.web.servlet.mvc.method.annotation" level="${LOG_LEVEL}"/>
+
+    <logger name="org.springframework.aop.interceptor" level="INFO"/>
+    <logger name="org.springframework.boot.actuate.trace" level="INFO"/>
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.springframework.web.context" level="INFO"/>
+    <logger name="org.springframework.web.servlet.mvc" level="INFO"/>
+    <logger name="org.mongodb.driver" level = "INFO"/>
+    <logger name="org.elasticsearch" level = "INFO"/>
+
+    <root level="${ROOT_LOG_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!--<springProfile name="local | dev">
+        &lt;!&ndash; configuration to be enabled when the "dev" or "staging" profiles are active &ndash;&gt;
+    </springProfile>-->
+
+</configuration>

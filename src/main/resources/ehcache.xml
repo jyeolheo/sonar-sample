@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ehcache>
+<ehcache updateCheck="false">
+    <diskStore path="java.io.tmpdir" />
+
+    <cache
+            name="infraTokenCache"
+            eternal="false"
+            maxElementsInMemory="1000"
+            overflowToDisk="false"
+            diskPersistent="false"
+            timeToIdleSeconds="3540"
+            timeToLiveSeconds="3540"
+            memoryStoreEvictionPolicy="LRU" />
+
+</ehcache>
